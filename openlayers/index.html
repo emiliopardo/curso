@@ -1,0 +1,74 @@
+<html>
+<charset meta="UTF-8">
+
+  <head>
+    <title>Openlayers Ortofoto 2016</title>
+    <script src="ol/ol.js"></script>
+    <link rel="stylesheet"
+      href="ol/ol.css" type="text/css">
+  </head>
+
+  <body>
+    <div style="width:100%; height:100%" id="map"></div>
+    <script>
+
+      var crea = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          features: [
+            new ol.Feature({
+              geometry: new ol.geom.Point(ol.proj.fromLonLat([-5.986678, 37.4201484]))
+            })
+          ]
+        }),
+      });
+
+
+      const iconStyle = new ol.style.Style({
+        image: new ol.style.Icon({
+          anchor: [0.5, 46],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          src: 'http://localhost/curso/visores/leaflet/leaflet/images/marker-icon.png',
+        }),
+      });
+
+      var layers = [
+        new ol.layer.Tile({
+          extent: [-675511, 4484870, -651169, 4501220],
+          source: new ol.source.TileWMS({
+            url: 'https://www.ideandalucia.es/wms/ortofoto2016?',
+            params: { 'LAYERS': 'ortofotografia_2016_pancromatico', 'TILED': true },
+            serverType: 'mapserver',
+            transition: 0
+          }), opacity: 1,
+        }),
+        // new ol.layer.Tile({
+        //   extent: [-675511, 4484870, -651169, 4501220],
+        //   source: new ol.source.TileWMS({
+        //     url: 'https://www.ideandalucia.es/services/andalucia/wms',
+        //     params: { 'LAYERS': 'andalucia:00_Mapa_Andalucia', 'TILED': true },
+        //     serverType: 'geoserver',
+        //     transition: 0
+        //   }),
+        //   opacity: 0.7,
+        // })
+
+      ];
+      var map = new ol.Map({
+        layers: layers,
+        target: 'map',
+        view: new ol.View({
+          projection: 'EPSG:3857',
+          center: [-666434, 4497834],
+          zoom: 17
+        })
+      });
+
+      map.addControl(new ol.control.ZoomSlider());
+      map.addLayer(crea);
+      crea.setStyle(iconStyle)
+
+    </script>
+  </body>
+
+</html>

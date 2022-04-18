@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<title>Leaflet Ortofoto 2016</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="leaflet/leaflet.css" />
+	<link rel="stylesheet" href="leaflet/L.Control.Zoomslider.css" />
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="leaflet/leaflet.js"></script>
+	<script src="leaflet/L.Control.Zoomslider.js"></script>
+</head>
+
+<body>
+	<div style="width:100%; height:100%" id="map"></div>
+	<script>
+		var map = L.map('map', {
+			zoomsliderControl: true,
+			zoomControl: false
+		}).setView([37.4201484, -5.986678], 17);
+		var ortofoto = L.tileLayer.wms('https://www.ideandalucia.es/wms/ortofoto2016?', { layers: 'ortofotografia_2016_pancromatico', format: 'image/png', transparent: true }).addTo(map);
+		// var topografico = L.tileLayer.wms('https://www.ideandalucia.es/services/andalucia/wms?', {layers: 'andalucia:00_Mapa_Andalucia',format: 'image/png', opacity: 0.7, transparent: true}).addTo(map);
+		L.marker([37.4201484, -5.986678]).addTo(map);
+	</script>
+</body>
+
+</html>

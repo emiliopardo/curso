@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Mapbox Ortofoto 2016</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+  <script src='../leaflet/leaflet/L.Control.Zoomslider.js'></script>
+  <link href='../leaflet/leaflet/L.Control.Zoomslider.css' rel='stylesheet' />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='map'></div>
+
+  <script>
+
+    var map = L.mapbox.map('map', null, {
+      zoomControl: false,
+      zoomsliderControl: true,
+    }).setView([37.4201484, -5.986678], 17);
+    L.marker([37.4201484, -5.986678]).addTo(map);
+
+
+    var ortofoto = L.tileLayer.wms("https://www.ideandalucia.es/wms/ortofoto2016?", {
+      format: 'image/png',
+      transparent: true,
+      layers: 'ortofotografia_2016_pancromatico'
+    }).addTo(map);
+
+
+// var andalucia = L.tileLayer.wms("https://www.ideandalucia.es/services/andalucia/wms?", {
+//     format: 'image/png',
+//     transparent: true,
+//     layers: 'andalucia:00_Mapa_Andalucia',
+//     opacity: 0.7
+// }).addTo(map);
+
+  </script>
+</body>
+
+</html>
