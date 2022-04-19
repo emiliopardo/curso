@@ -8,12 +8,12 @@
   <meta name='epardo' content='SitePoint'>
   <!-- fichero estilos -->
 
-  <link href='http://mapea4-sigc.juntadeandalucia.es/mapea/assets/css/mapea-6.1.0.ol.min.css' rel='stylesheet' />
+  <link href='https://mapea4-sigc.juntadeandalucia.es/mapea/assets/css/mapea-6.1.0.ol.min.css' rel='stylesheet' />
   <link href='plugins/mapheader.ol.min.css' rel='stylesheet' />
   <link href='css/index.css' rel='stylesheet' />
   <!-- ficheros javascript -->
-  <script type='text/javascript' src='http://mapea4-sigc.juntadeandalucia.es/mapea/js/mapea-6.1.0.ol.min.js'></script>
-  <script type='text/javascript' src='http://mapea4-sigc.juntadeandalucia.es/mapea/js/configuration-6.1.0.js'></script>
+  <script type='text/javascript' src='https://mapea4-sigc.juntadeandalucia.es/mapea/js/mapea-6.1.0.ol.min.js'></script>
+  <script type='text/javascript' src='https://mapea4-sigc.juntadeandalucia.es/mapea/js/configuration-6.1.0.js'></script>
   <script type="text/javascript" src="plugins/mapheader.ol.min.js"></script>
 </head>
 
@@ -21,7 +21,7 @@
   <div id='map'></div>
   <script type='text/javascript'>
     let ortofoto2016 = new M.layer.WMS({
-      url: 'http://www.ideandalucia.es/wms/ortofoto2016?',
+      url: 'https://www.ideandalucia.es/wms/ortofoto2016?',
       name: 'ortofotografia_2016_pancromatico',
       legend: 'Ortofoto 2016',
       transparent: false,
@@ -32,14 +32,14 @@
       {
         name: "Palmeras 31",
         //url: "http://localhost/curso/visores/mapea/jardines/datos/palmeras_31.geojson"
-        url :"http://emiliopardo.github.io/curso/mapea/jardines/datos/palmeras_31.geojson"
+        url :"https://emiliopardo.github.io/curso/mapea/jardines/datos/palmeras_31.geojson"
       });
 
     let arboles = new M.layer.GeoJSON(
       {
         name: "Arboles 30",
         // url: "http://localhost/curso/visores/mapea/jardines/datos/arboles_30_select.geojson"
-        url: "http://emiliopardo.github.io/curso/mapea/jardines/datos/arboles_30_select.geojson"
+        url: "https://emiliopardo.github.io/curso/mapea/jardines/datos/arboles_30_select.geojson"
       });
 
     mapajs = M.map({
@@ -63,13 +63,13 @@
 
     let imagenPalmera = new M.style.Point({
       icon: {
-        src: 'http://emiliopardo.github.io/curso/mapea/jardines/css/sevilla2018/palmera.png'
+        src: 'https://emiliopardo.github.io/curso/mapea/jardines/css/sevilla2018/palmera.png'
       }
     });
 
     let imagenArbol = new M.style.Point({
       icon: {
-        src: 'http://emiliopardo.github.io/curso/mapea/jardines/css/sevilla2018/arbol.png'
+        src: 'https://emiliopardo.github.io/curso/mapea/jardines/css/sevilla2018/arbol.png'
       }
     });
 
@@ -77,9 +77,9 @@
 
     let configHeaderJardines = {
       open: true,
-      htmlCode: '<div class="container-fluid"><div class="navbar-header"> <button type="button" class="navbar-toggle" ng-click="isCollapsed=!isCollapsed"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <span class="navbar-brand"> <div ng-hide="subtitulo"> <div class="navbar-brand-especial2" ng-show="urlBrand"> <img ng-src="css/sevilla2018/logosevilla2.png" src="css/sevilla2018/logosevilla2.png"> <div class="ng-binding"> Árboles de Sevilla<br><a ng-href="http://010desevilla.org/web010/page/atencion.web" ng-show="urlBrand" class="texto-peque ng-binding" target="_blank" href="http://010desevilla.org/web010/page/atencion.web">CONTACTO</a></div></div></div></span> </div></div>',
+      htmlCode: '<div class="container-fluid"><div class="navbar-header"> <button type="button" class="navbar-toggle" ng-click="isCollapsed=!isCollapsed"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <span class="navbar-brand"> <div ng-hide="subtitulo"> <div class="navbar-brand-especial2" ng-show="urlBrand"> <img ng-src="css/sevilla2018/logosevilla2.png" src="css/sevilla2018/logosevilla2.png"> <div class="ng-binding"> Árboles de Sevilla<br><a ng-href="https://010desevilla.org/web010/page/atencion.web" ng-show="urlBrand" class="texto-peque ng-binding" target="_blank" href="https://010desevilla.org/web010/page/atencion.web">CONTACTO</a></div></div></div></span> </div></div>',
       cssList: [
-        'http://www.arbomap.com/arbomapciudadano/css/sevilla2018/site.css',
+        'https://www.arbomap.com/arbomapciudadano/css/sevilla2018/site.css',
       ]
     }
 
